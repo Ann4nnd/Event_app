@@ -61,10 +61,7 @@ def delete_event(event_id: int, db: Session = Depends(get_db)):
     return {"message": "Event deleted successfully"}
 
 # Пример списка мероприятий
-events = [
-    {"id": 1, "title": "Tech Conference", "description": "A conference about tech", "date": "2024-12-01", "available_spots": 100},
-    {"id": 2, "title": "Art Expo", "description": "An exhibition of modern art", "date": "2024-12-05", "available_spots": 50}
-]
+events = []
 
 @app.get("/events", response_model=List[dict])
 def get_events():
